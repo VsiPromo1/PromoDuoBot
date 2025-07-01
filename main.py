@@ -66,10 +66,10 @@ def start(update: Update, context: CallbackContext):
     context.bot.send_message(
         chat_id=user_id,
         text=(
-            f"Привіт, {user.first_name}!
-"
-            f"Запрошуй друзів та отримуй по {REWARD_PER_REF} грн за кожного!
-"
+            f"Привіт, {user.first_name}!"
+            
+            f"Запрошуй друзів та отримуй по {REWARD_PER_REF} грн за кожного!"
+            
             f"Твоє посилання: https://t.me/PromoDuoBot?start={user_id}"
         ),
         reply_markup=main_menu
