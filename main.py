@@ -81,8 +81,8 @@ def balance(update: Update, context: CallbackContext):
     cursor.execute("SELECT balance FROM users WHERE user_id = ?", (user_id,))
     row = cursor.fetchone()
     bal = row[0] if row else 0
-    msg = f"Ваш баланс: {bal} грн
-"
+    msg = f"Ваш баланс: {bal} грн"
+    
     if bal >= WITHDRAW_LIMIT:
         msg += "✅ Ви можете вивести кошти. Натисніть '📤 Вивід'"
     else:
@@ -123,14 +123,14 @@ def handle_message(update: Update, context: CallbackContext):
     if row and row[0] >= WITHDRAW_LIMIT:
         context.bot.send_message(
             admin_id,
-            f"🔔 Запит на виведення
-"
-            f"👤 @{update.effective_user.username}
-"
-            f"ID: {user_id}
-"
-            f"💰 Сума: {row[0]} грн
-"
+            f"🔔 Запит на виведення"
+            
+            f"👤 @{update.effective_user.username}"
+            
+            f"ID: {user_id}"
+            
+            f"💰 Сума: {row[0]} грн"
+            
             f"📤 Реквізити: {text}"
         )
         update.message.reply_text("✅ Заявка на виплату надіслана адміну. Очікуйте підтвердження!", reply_markup=main_menu)
