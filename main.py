@@ -107,7 +107,7 @@ def handle_message(update: Update, context: CallbackContext):
 
     if text == "👥 Запросити друзів":
         link = f"https://t.me/PromoDuoBot?start={user_id}"
-        update.message.reply_text(f"Ваше реферальне посилання:\n{link}"), reply_markup=main_menu)
+        update.message.reply_text(f"Ваше реферальне посилання:\n{link}", reply_markup=main_menu)
         return
     elif text == "💰 Баланс":
         balance(update, context)
